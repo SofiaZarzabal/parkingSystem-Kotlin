@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TitleMainActivityStyle">
+        <item name="android:textSize">@dimen/size_main_activity_text</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">@color/burnt_sienna_title_main_activity</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_main_activity_text</item>
+    </style>
+
+    <style name="ButtonMainActivitySelectParkingSpacesStyle">
+        <item name="android:textSize">@dimen/size_main_activity_button</item>
+        <item name="android:backgroundTint">@color/pomegranate_button_main_activity</item>
+        <item name="android:layout_below">@id/title_main_activity</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_main_activity_button</item>
+    </style>
+
+</resources>

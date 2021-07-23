@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_main_activity_text">28sp</dimen>
+    <dimen name="size_main_activity_button">20sp</dimen>
+    <dimen name="margin_top_main_activity_button">100dp</dimen>
+    <dimen name="margin_top_main_activity_text">200dp</dimen>
+</resources>

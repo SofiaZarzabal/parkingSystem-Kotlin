@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ParkingSystemKotlin</string>
+    <string name="text_main_activity_title">Welcome to Parking System</string>
+    <string name="button_main_activity_total_parking_lots">Select parking lots</string>
+    <string name="button_configure_parking_dialog_accept">OK</string>
+    <string name="button_configure_parking_dialog_cancel">Cancel</string>
+    <string name="text_configure_parking_dialog">Set the amount of the parking lots available</string>
+    <string name="toast_configure_parking_dialog_empty_input">Please set the amount of the parking lots avaiables</string>
+    <string name="toast_main_activity_total_parking_lots">Total of parking lots: %1$d </string>
 </resources>
