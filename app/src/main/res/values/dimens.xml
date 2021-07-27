@@ -3,5 +3,12 @@
     <dimen name="size_main_activity_text">28sp</dimen>
     <dimen name="size_main_activity_button">20sp</dimen>
     <dimen name="margin_top_main_activity_button">100dp</dimen>
-    <dimen name="margin_top_main_activity_text">200dp</dimen>
+    <dimen name="margin_top_main_activity_text">100dp</dimen>
+    <dimen name="margin_left_right_main_activity_text">20dp</dimen>
+    <dimen name="size_parking_space_reservation_title">40dp</dimen>
+    <dimen name="size_parking_space_reservation_text">20dp</dimen>
+    <dimen name="margin_top_parking_space_reservation_button">15dp</dimen>
+    <dimen name="width_parking_space_reservation_text_view">170dp</dimen>
+    <dimen name="margin_top_parking_space_reservation_text_view">25dp</dimen>
+    <dimen name="margin_top_parking_space_reservation_edit_text">10dp</dimen>
 </resources>

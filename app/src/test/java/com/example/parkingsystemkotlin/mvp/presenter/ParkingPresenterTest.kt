@@ -1,6 +1,6 @@
 package com.example.parkingsystemkotlin.mvp.presenter
 
-import com.example.parkingsystemkotlin.mvp.contracts.ParkingContract
+import com.example.parkingsystemkotlin.mvp.contract.ParkingContract
 import com.example.parkingsystemkotlin.mvp.model.ParkingModel
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -24,16 +24,24 @@ class ParkingPresenterTest {
     @Test
     fun `on button select parking pressed, the view shows the dialog fragment`() {
         presenter.onButtonMainSelectParkingPressed()
+
         verify(view).showParkingAlertDialog()
     }
 
     @Test
     fun `on button parking spaces pressed, the view shows a Toast`() {
         presenter.onButtonDialogConfirmPressed(PARKING_SPACES)
+
         assertEquals(PARKING_SPACES, model.getParkingSpaces())
         verify(view).showParkingSpaces(model.getParkingSpaces())
     }
 
+    @Test
+    fun `on button book parking space, the view goes to reservation activity`(){
+        presenter.onButtonMainBookParkingLotPressed()
+
+        verify(view).showParkingSpaceReservation()
+    }
     companion object {
         private const val PARKING_SPACES = 5
     }

@@ -1,7 +1,7 @@
 package com.example.parkingsystemkotlin.mvp.presenter
 
 import com.example.parkingsystemkotlin.listener.ConfigureParkingDialogListener
-import com.example.parkingsystemkotlin.mvp.contracts.ConfigureParkingDialogContract
+import com.example.parkingsystemkotlin.mvp.contract.ConfigureParkingDialogContract
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
