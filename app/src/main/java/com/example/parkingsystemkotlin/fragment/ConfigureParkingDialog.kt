@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.parkingsystemkotlin.databinding.DialogParkingConfigureBinding
 import com.example.parkingsystemkotlin.listener.ConfigureParkingDialogListener
-import com.example.parkingsystemkotlin.mvp.contracts.ConfigureParkingDialogContract
+import com.example.parkingsystemkotlin.mvp.contract.ConfigureParkingDialogContract
 import com.example.parkingsystemkotlin.mvp.presenter.ConfigureParkingDialogPresenter
 import com.example.parkingsystemkotlin.mvp.view.ConfigureParkingDialogView
 

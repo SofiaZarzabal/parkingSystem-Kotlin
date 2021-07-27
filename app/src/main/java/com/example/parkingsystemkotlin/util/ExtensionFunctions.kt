@@ -1,4 +1,4 @@
-package com.example.parkingsystemkotlin.utils
+package com.example.parkingsystemkotlin.util
 
 import android.content.Context
 import android.widget.Toast

@@ -6,13 +6,40 @@
         <item name="android:fontFamily">sans-serif-black</item>
         <item name="android:textColor">@color/burnt_sienna_title_main_activity</item>
         <item name="android:layout_marginTop">@dimen/margin_top_main_activity_text</item>
+        <item name="android:layout_marginLeft">@dimen/margin_left_right_main_activity_text</item>
+        <item name="android:gravity">center</item>
     </style>
 
-    <style name="ButtonMainActivitySelectParkingSpacesStyle">
-        <item name="android:textSize">@dimen/size_main_activity_button</item>
-        <item name="android:backgroundTint">@color/pomegranate_button_main_activity</item>
-        <item name="android:layout_below">@id/title_main_activity</item>
+    <style name="ButtonMainActivitySelectParkingSpacesStyle" parent="ButtonMainActivityBookParkingStyle">
         <item name="android:layout_marginTop">@dimen/margin_top_main_activity_button</item>
     </style>
 
+    <style name="ButtonMainActivityBookParkingStyle">
+        <item name="android:textSize">@dimen/size_main_activity_button</item>
+        <item name="android:backgroundTint">@color/pomegranate_button_main_activity</item>
+    </style>
+
+    <style name="TitleParkingSpaceReservationStyle">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/size_parking_space_reservation_text</item>
+    </style>
+
+    <style name="TextParkingSpaceReservationStyle">
+        <item name="android:textSize">@dimen/size_parking_space_reservation_text</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_parking_space_reservation_text_view</item>
+    </style>
+
+    <style name="InputParkingSpaceReservationStyle">
+        <item name="android:inputType">number</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_parking_space_reservation_edit_text</item>
+    </style>
+
+    <style name="InputParkingSpaceReservationPlaceStyle" parent="InputParkingSpaceReservationStyle">
+        <item name="android:hint">@string/input_parking_space_reservation_place_hint</item>
+    </style>
+
+    <style name="InputParkingSpaceReservationCodeStyle" parent="InputParkingSpaceReservationStyle">
+        <item name="android:hint">@string/input_parking_space_reservation_code_hint</item>
+    </style>
 </resources>

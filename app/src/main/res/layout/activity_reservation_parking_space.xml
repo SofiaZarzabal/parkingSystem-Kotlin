@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper_main_background">
+
+    <TextView
+        android:id="@+id/title_parking_space_reservation"
+        style="@style/TitleParkingSpaceReservationStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_parking_space_reservation_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_parking_space_reservation_picker_begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_parking_space_reservation_button"
+        android:text="@string/button_parking_space_reservation_begin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/text_parking_space_reservation_picker_begin"
+        app:layout_constraintTop_toBottomOf="@id/title_parking_space_reservation" />
+
+    <TextView
+        android:id="@+id/text_parking_space_reservation_picker_begin"
+        style="@style/TextParkingSpaceReservationStyle"
+        android:layout_width="@dimen/width_parking_space_reservation_text_view"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/button_parking_space_reservation_picker_begin"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_parking_space_reservation" />
+
+    <Button
+        android:id="@+id/button_parking_space_reservation_picker_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/button_parking_space_reservation_end"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/text_parking_space_reservation_picker_end"
+        app:layout_constraintTop_toBottomOf="@id/button_parking_space_reservation_picker_begin" />
+
+    <TextView
+        android:id="@+id/text_parking_space_reservation_picker_end"
+        style="@style/TextParkingSpaceReservationStyle"
+        android:layout_width="@dimen/width_parking_space_reservation_text_view"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/button_parking_space_reservation_picker_end"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_parking_space_reservation_picker_begin" />
+
+    <EditText
+        android:id="@+id/input_parking_space_reservation_place"
+        style="@style/InputParkingSpaceReservationPlaceStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/button_parking_space_reservation_picker_end" />
+
+    <EditText
+        android:id="@+id/input_parking_space_reservation_code"
+        style="@style/InputParkingSpaceReservationCodeStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/input_parking_space_reservation_place" />
+
+    <Button
+        android:id="@+id/button_parking_space_reservation_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_parking_space_reservation_save"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_parking_space_reservation_code" />
+</androidx.constraintlayout.widget.ConstraintLayout>

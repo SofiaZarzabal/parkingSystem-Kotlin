@@ -1,10 +1,11 @@
-package com.example.parkingsystemkotlin.mvp.contracts
+package com.example.parkingsystemkotlin.mvp.contract
 
 interface ParkingContract {
 
     interface ParkingPresenter {
         fun onButtonMainSelectParkingPressed()
         fun onButtonDialogConfirmPressed(parkingSpaces: Int)
+        fun onButtonMainBookParkingLotPressed()
     }
 
     interface ParkingModel {
@@ -15,5 +16,6 @@ interface ParkingContract {
     interface ParkingView {
         fun showParkingAlertDialog()
         fun showParkingSpaces(parkingSpaces: Int)
+        fun showParkingSpaceReservation()
     }
 }

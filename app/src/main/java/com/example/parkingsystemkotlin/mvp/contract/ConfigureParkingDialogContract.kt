@@ -1,4 +1,4 @@
-package com.example.parkingsystemkotlin.mvp.contracts
+package com.example.parkingsystemkotlin.mvp.contract
 
 import com.example.parkingsystemkotlin.listener.ConfigureParkingDialogListener
 

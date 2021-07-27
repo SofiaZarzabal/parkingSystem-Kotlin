@@ -7,4 +7,12 @@
     <string name="text_configure_parking_dialog">Set the amount of the parking lots available</string>
     <string name="toast_configure_parking_dialog_empty_input">Please set the amount of the parking lots avaiables</string>
     <string name="toast_main_activity_total_parking_lots">Total of parking lots: %1$d </string>
+    <string name="button_main_activity_book_parking_lot">Book a parking space!</string>
+    <string name="text_parking_space_reservation_title">BOOK YOUR PARKING SPACE HERE</string>
+    <string name="button_parking_space_reservation_begin">Date/Time start</string>
+    <string name="button_parking_space_reservation_end">Date/Time end</string>
+    <string name="input_parking_space_reservation_place_hint">PLACE</string>
+    <string name="input_parking_space_reservation_code_hint">CODE</string>
+    <string name="button_parking_space_reservation_save">SAVE</string>
+    <string name="text_parking_space_reservation_picker">%1$s at %2$s</string>
 </resources>
