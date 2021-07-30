@@ -2,7 +2,9 @@ package com.example.parkingsystemkotlin.mvp.contract
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.icu.util.Calendar
+import com.example.parkingsystemkotlin.entity.Reservation
+import com.example.parkingsystemkotlin.util.ReservationVerifiyResult
+import java.util.Calendar
 
 interface ParkingSpaceReservationContract {
 
@@ -10,6 +12,7 @@ interface ParkingSpaceReservationContract {
         fun onButtonParkingSpaceReservationPickerPressed(listener: DatePickerDialog.OnDateSetListener)
         fun onDateSetPressed(year: Int, month: Int, dayOfMonth: Int, timeListener: TimePickerDialog.OnTimeSetListener)
         fun onTimeSetPressed(hourOfDay: Int, minute: Int)
+        fun onButtonParkingSpaceReservationSavePressed()
     }
 
     interface ParkingSpaceReservationModel {
@@ -25,6 +28,11 @@ interface ParkingSpaceReservationContract {
         fun getDateEnd(): Calendar
         fun getTimeEnd(): Calendar
         fun getFormattedString(calendar: Calendar, formatGiven: String): String
+        fun getReservation(): Reservation
+        fun completeReservationInfo(parkingSpace: Int, securityCode: Int)
+        fun getReservationVerifyResult(): ReservationVerifiyResult
+        fun getValidReservation(): ReservationVerifiyResult
+        fun makeReservation(reservation: Reservation)
     }
 
     interface ParkingSpaceReservationView {
@@ -34,5 +42,15 @@ interface ParkingSpaceReservationContract {
         fun enableButtonEnd()
         fun showDateAndTimeStart(date: String, time: String)
         fun showDateAndTimeEnd(date: String, time: String)
+        fun getParkingSpace(): String
+        fun getSecurityCode(): String
+        fun showMissingDateStart()
+        fun showMissingTimeStart()
+        fun showMissingDateEnd()
+        fun showMissingTimeEnd()
+        fun showMissingParkingSpace()
+        fun showMissingSecurityCode()
+        fun showReservationOverlapping()
+        fun showReservationSuccess()
     }
 }

@@ -15,4 +15,12 @@
     <string name="input_parking_space_reservation_code_hint">CODE</string>
     <string name="button_parking_space_reservation_save">SAVE</string>
     <string name="text_parking_space_reservation_picker">%1$s at %2$s</string>
+    <string name="toast_parking_space_reservation_missing_date_start">Please, put the date start in the field</string>
+    <string name="toast_parking_space_reservation_missing_time_start">Please, put the time start in the field</string>
+    <string name="toast_parking_space_reservation_missing_date_end">Please, put the date end in the field</string>
+    <string name="toast_parking_space_reservation_missing_time_end">Please, put the time end in the field</string>
+    <string name="toast_parking_space_reservation_missing_place">Please, put the parking place in the field</string>
+    <string name="toast_parking_space_reservation_missing_security_code">Please, put the security code in the field</string>
+    <string name="toast_parking_space_reservation_reservation_overlapping">This date has already booked. Please select another date</string>
+    <string name="toast_parking_space_reservation_save">Your reservation was made successfully</string>
 </resources>

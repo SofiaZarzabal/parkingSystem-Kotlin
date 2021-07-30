@@ -1,17 +1,19 @@
 package com.example.parkingsystemkotlin.mvp.model
 
-import android.icu.util.Calendar
+import com.example.parkingsystemkotlin.database.ParkingSpaceReservationDB
+import com.example.parkingsystemkotlin.entity.Reservation
 import com.example.parkingsystemkotlin.mvp.contract.ParkingSpaceReservationContract
 import com.example.parkingsystemkotlin.util.DateUtils
+import com.example.parkingsystemkotlin.util.ReservationChecker
+import com.example.parkingsystemkotlin.util.ReservationVerifiyResult
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Locale
 
 class ParkingSpaceReservationModel : ParkingSpaceReservationContract.ParkingSpaceReservationModel {
     private var isDateStartButtonPressed = false
-    private lateinit var dateStart: Calendar
-    private lateinit var timeStart: Calendar
-    private lateinit var dateEnd: Calendar
-    private lateinit var timeEnd: Calendar
+    private val reservation = Reservation()
+    private val reservationChecker = ReservationChecker(ParkingSpaceReservationDB)
 
     override fun setDateStartButtonPressed(isDateStartButtonPressed: Boolean) {
         this.isDateStartButtonPressed = isDateStartButtonPressed
@@ -22,34 +24,51 @@ class ParkingSpaceReservationModel : ParkingSpaceReservationContract.ParkingSpac
         return DateUtils.convertToCalendar(sDate, format)
     }
 
-    override fun getFormattedString(calendar: Calendar, formatGiven: String): String {
-        val format = SimpleDateFormat(formatGiven, Locale.getDefault())
-        return DateUtils.convertToString(calendar, format)
-    }
-
     override fun getDateStartButtonPressed(): Boolean = isDateStartButtonPressed
 
     override fun setDateStart(dateStart: Calendar) {
-        this.dateStart = dateStart
+        reservation.dateStart = dateStart
     }
 
     override fun setTimeStart(timeStart: Calendar) {
-        this.timeStart = timeStart
+        reservation.timeStart = timeStart
     }
 
     override fun setDateEnd(dateEnd: Calendar) {
-        this.dateEnd = dateEnd
+        reservation.dateEnd = dateEnd
     }
 
     override fun setTimeEnd(timeEnd: Calendar) {
-        this.timeEnd = timeEnd
+        reservation.timeEnd = timeEnd
     }
 
-    override fun getDateStart(): Calendar = dateStart
+    override fun getDateStart(): Calendar = reservation.dateStart
 
-    override fun getTimeStart(): Calendar = timeStart
+    override fun getTimeStart(): Calendar = reservation.timeStart
 
-    override fun getDateEnd(): Calendar = dateEnd
+    override fun getDateEnd(): Calendar = reservation.dateEnd
 
-    override fun getTimeEnd(): Calendar = timeEnd
+    override fun getTimeEnd(): Calendar = reservation.timeEnd
+
+    override fun getFormattedString(calendar: Calendar, formatGiven: String): String = reservation.getFormattedString(calendar, formatGiven)
+
+    override fun getReservation(): Reservation = reservation
+
+    override fun completeReservationInfo(parkingSpace: Int, securityCode: Int) {
+        reservation.parkingSpace = parkingSpace
+        reservation.securityCode = securityCode
+    }
+
+    override fun getReservationVerifyResult(): ReservationVerifiyResult = reservation.getReservationVerifyResult()
+
+    override fun getValidReservation(): ReservationVerifiyResult =
+        if (reservationChecker.canBeReserved(reservation)) {
+            ReservationVerifiyResult.SUCCESS
+        } else {
+            ReservationVerifiyResult.RESERVATION_OVERLAPPING
+        }
+
+    override fun makeReservation(reservation: Reservation) {
+        ParkingSpaceReservationDB.addReservation(reservation)
+    }
 }

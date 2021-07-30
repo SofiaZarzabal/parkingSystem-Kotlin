@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import com.example.parkingsystemkotlin.mvp.contract.ParkingSpaceReservationContract
 import com.example.parkingsystemkotlin.util.Constants
+import com.example.parkingsystemkotlin.util.ReservationVerifiyResult
 
 class ParkingSpaceReservationPresenter(
     private val model: ParkingSpaceReservationContract.ParkingSpaceReservationModel,
@@ -42,6 +43,29 @@ class ParkingSpaceReservationPresenter(
                 model.getFormattedString(model.getDateEnd(), Constants.FORMAT_DATE),
                 model.getFormattedString(model.getTimeEnd(), Constants.FORMAT_TIME)
             )
+        }
+    }
+
+    override fun onButtonParkingSpaceReservationSavePressed() {
+        val parkingSpace = if (view.getParkingSpace().isNotEmpty()) view.getParkingSpace().toInt() else Constants.MINUS_ONE
+        val securityCode = if (view.getSecurityCode().isNotEmpty()) view.getSecurityCode().toInt() else Constants.MINUS_ONE
+        model.completeReservationInfo(parkingSpace, securityCode)
+        when (model.getReservationVerifyResult()) {
+            ReservationVerifiyResult.MISSING_DATE_START -> view.showMissingDateStart()
+            ReservationVerifiyResult.MISSING_TIME_START -> view.showMissingTimeStart()
+            ReservationVerifiyResult.MISSING_DATE_END -> view.showMissingDateEnd()
+            ReservationVerifiyResult.MISSING_TIME_END -> view.showMissingTimeEnd()
+            ReservationVerifiyResult.MISSING_PARKING_SPACE -> view.showMissingParkingSpace()
+            ReservationVerifiyResult.MISSING_SECURITY_CODE -> view.showMissingSecurityCode()
+            ReservationVerifiyResult.FIELDS_COMPLETE -> {
+                val canBeReserved = model.getValidReservation()
+                if (canBeReserved == ReservationVerifiyResult.SUCCESS) {
+                    model.makeReservation(model.getReservation())
+                    view.showReservationSuccess()
+                } else {
+                    view.showReservationOverlapping()
+                }
+            }
         }
     }
 }

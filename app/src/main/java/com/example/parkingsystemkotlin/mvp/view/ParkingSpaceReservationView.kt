@@ -8,6 +8,7 @@ import com.example.parkingsystemkotlin.R
 import com.example.parkingsystemkotlin.databinding.ActivityReservationParkingSpaceBinding
 import com.example.parkingsystemkotlin.mvp.contract.ParkingSpaceReservationContract
 import com.example.parkingsystemkotlin.mvp.view.base.ActivityView
+import com.example.parkingsystemkotlin.util.toast
 
 class ParkingSpaceReservationView(activity: Activity, private val binding: ActivityReservationParkingSpaceBinding) :
     ParkingSpaceReservationContract.ParkingSpaceReservationView, ActivityView(activity) {
@@ -49,5 +50,58 @@ class ParkingSpaceReservationView(activity: Activity, private val binding: Activ
         context?.let {
             binding.textParkingSpaceReservationPickerEnd.text = it.getString(R.string.text_parking_space_reservation_picker, date, time)
         }
+    }
+
+    override fun getParkingSpace(): String = binding.inputParkingSpaceReservationPlace.text.toString()
+
+    override fun getSecurityCode(): String = binding.inputParkingSpaceReservationCode.text.toString()
+
+    override fun showMissingDateStart() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_missing_date_start))
+        }
+    }
+
+    override fun showMissingTimeStart() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_missing_time_start))
+        }
+    }
+
+    override fun showMissingDateEnd() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_missing_date_end))
+        }
+    }
+
+    override fun showMissingTimeEnd() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_missing_time_end))
+        }
+    }
+
+    override fun showMissingParkingSpace() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_missing_place))
+        }
+    }
+
+    override fun showMissingSecurityCode() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_missing_security_code))
+        }
+    }
+
+    override fun showReservationOverlapping() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_reservation_overlapping))
+        }
+    }
+
+    override fun showReservationSuccess() {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_save))
+        }
+        activity?.finish()
     }
 }
