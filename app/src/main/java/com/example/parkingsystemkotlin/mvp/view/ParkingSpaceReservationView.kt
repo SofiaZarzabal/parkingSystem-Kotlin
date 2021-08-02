@@ -104,4 +104,10 @@ class ParkingSpaceReservationView(activity: Activity, private val binding: Activ
         }
         activity?.finish()
     }
+
+    override fun showPastReservationsReleased(amountReservations: Int) {
+        context?.let {
+            it.toast(it.getString(R.string.toast_parking_space_reservation_amount_reserves_released, amountReservations))
+        }
+    }
 }

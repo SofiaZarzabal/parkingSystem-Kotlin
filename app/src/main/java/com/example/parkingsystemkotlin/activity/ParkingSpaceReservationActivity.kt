@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.appcompat.app.AppCompatActivity
+import com.example.parkingsystemkotlin.database.ParkingSpaceReservationDB
 import com.example.parkingsystemkotlin.databinding.ActivityReservationParkingSpaceBinding
 import com.example.parkingsystemkotlin.mvp.contract.ParkingSpaceReservationContract
 import com.example.parkingsystemkotlin.mvp.model.ParkingSpaceReservationModel
@@ -23,7 +24,11 @@ class ParkingSpaceReservationActivity : AppCompatActivity(), DatePickerDialog.On
         super.onCreate(savedInstanceState)
         binding = ActivityReservationParkingSpaceBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = ParkingSpaceReservationPresenter(ParkingSpaceReservationModel(), ParkingSpaceReservationView(this, binding))
+        presenter = ParkingSpaceReservationPresenter(
+            ParkingSpaceReservationModel(ParkingSpaceReservationDB),
+            ParkingSpaceReservationView(this, binding)
+        )
+        clearPastReservations()
         setListeners()
     }
 
@@ -35,8 +40,12 @@ class ParkingSpaceReservationActivity : AppCompatActivity(), DatePickerDialog.On
         presenter.onTimeSetPressed(hourOfDay, minute)
     }
 
+    private fun clearPastReservations() {
+        presenter.clearOldReservations()
+    }
+
     private fun setListeners() {
-        with(binding){
+        with(binding) {
             buttonParkingSpaceReservationPickerBegin.setOnClickListener { presenter.onButtonParkingSpaceReservationPickerPressed(this@ParkingSpaceReservationActivity) }
             buttonParkingSpaceReservationPickerEnd.setOnClickListener { presenter.onButtonParkingSpaceReservationPickerPressed(this@ParkingSpaceReservationActivity) }
             buttonParkingSpaceReservationSave.setOnClickListener { presenter.onButtonParkingSpaceReservationSavePressed() }

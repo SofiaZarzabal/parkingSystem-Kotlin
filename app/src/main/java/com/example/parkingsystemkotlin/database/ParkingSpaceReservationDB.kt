@@ -1,6 +1,7 @@
 package com.example.parkingsystemkotlin.database
 
 import com.example.parkingsystemkotlin.entity.Reservation
+import java.util.Calendar
 
 object ParkingSpaceReservationDB {
     val hashReservation: MutableMap<Int, MutableList<Reservation>> = HashMap()
@@ -14,6 +15,15 @@ object ParkingSpaceReservationDB {
         reservations?.let {
             it.add(reservation)
             hashReservation.put(parkingSpace, it)
+        }
+    }
+
+    fun releasePastReservations() {
+        hashReservation.forEach { (reservationList, _) ->
+            hashReservation[reservationList]?.removeAll { reservation -> Calendar.getInstance().after(reservation.dateEnd) }
+            if (hashReservation[reservationList].isNullOrEmpty()) {
+                hashReservation.remove(reservationList)
+            }
         }
     }
 }
