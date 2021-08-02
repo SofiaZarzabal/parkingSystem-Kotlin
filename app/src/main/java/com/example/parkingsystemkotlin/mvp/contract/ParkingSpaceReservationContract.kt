@@ -13,6 +13,7 @@ interface ParkingSpaceReservationContract {
         fun onDateSetPressed(year: Int, month: Int, dayOfMonth: Int, timeListener: TimePickerDialog.OnTimeSetListener)
         fun onTimeSetPressed(hourOfDay: Int, minute: Int)
         fun onButtonParkingSpaceReservationSavePressed()
+        fun clearOldReservations()
     }
 
     interface ParkingSpaceReservationModel {
@@ -33,6 +34,7 @@ interface ParkingSpaceReservationContract {
         fun getReservationVerifyResult(): ReservationVerifiyResult
         fun getValidReservation(): ReservationVerifiyResult
         fun makeReservation(reservation: Reservation)
+        fun releaseOldReservations()
     }
 
     interface ParkingSpaceReservationView {
@@ -52,5 +54,6 @@ interface ParkingSpaceReservationContract {
         fun showMissingSecurityCode()
         fun showReservationOverlapping()
         fun showReservationSuccess()
+        fun showPastReservationsReleased(amountReservations: Int)
     }
 }

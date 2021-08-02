@@ -10,10 +10,11 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-class ParkingSpaceReservationModel : ParkingSpaceReservationContract.ParkingSpaceReservationModel {
+class ParkingSpaceReservationModel(private val database: ParkingSpaceReservationDB) :
+    ParkingSpaceReservationContract.ParkingSpaceReservationModel {
     private var isDateStartButtonPressed = false
     private val reservation = Reservation()
-    private val reservationChecker = ReservationChecker(ParkingSpaceReservationDB)
+    private val reservationChecker = ReservationChecker(database)
 
     override fun setDateStartButtonPressed(isDateStartButtonPressed: Boolean) {
         this.isDateStartButtonPressed = isDateStartButtonPressed
@@ -70,5 +71,9 @@ class ParkingSpaceReservationModel : ParkingSpaceReservationContract.ParkingSpac
 
     override fun makeReservation(reservation: Reservation) {
         ParkingSpaceReservationDB.addReservation(reservation)
+    }
+
+    override fun releaseOldReservations() {
+        database.releasePastReservations()
     }
 }

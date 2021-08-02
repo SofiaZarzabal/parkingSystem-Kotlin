@@ -2,6 +2,7 @@ package com.example.parkingsystemkotlin.mvp.presenter
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import com.example.parkingsystemkotlin.database.ParkingSpaceReservationDB
 import com.example.parkingsystemkotlin.entity.Reservation
 import com.example.parkingsystemkotlin.mvp.contract.ParkingSpaceReservationContract
 import com.example.parkingsystemkotlin.mvp.model.ParkingSpaceReservationModel
@@ -22,7 +23,7 @@ class ParkingSpaceReservationPresenterTest {
 
     @Before
     fun setup() {
-        model = ParkingSpaceReservationModel()
+        model = ParkingSpaceReservationModel(ParkingSpaceReservationDB)
         presenter = ParkingSpaceReservationPresenter(model, view)
     }
 
@@ -251,6 +252,11 @@ class ParkingSpaceReservationPresenterTest {
         verify(view).showReservationSuccess()
     }
 
+    @Test
+    fun`on activity creates, the old reservations are released`(){
+        presenter.clearOldReservations()
+    }
+
     companion object {
         private const val YEAR = 2021
         private const val MONTH = 8
@@ -274,6 +280,5 @@ class ParkingSpaceReservationPresenterTest {
         private const val PARKING_SPACE_INT = 2
         private const val SECURITY_CODE_INT = 873
         private const val EMPTY_STRING = ""
-
     }
 }
