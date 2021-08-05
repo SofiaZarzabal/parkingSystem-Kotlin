@@ -68,7 +68,12 @@ class ParkingSpaceReservationPresenter(
             }
         }
     }
+
     override fun clearOldReservations() {
         model.releaseOldReservations()
+    }
+
+    override fun onButtonParkingSpaceReservationListPressed() {
+        view.showReservationList()
     }
 }

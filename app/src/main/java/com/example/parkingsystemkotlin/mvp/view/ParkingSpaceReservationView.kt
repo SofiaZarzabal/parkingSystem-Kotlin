@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.icu.util.Calendar
 import com.example.parkingsystemkotlin.R
+import com.example.parkingsystemkotlin.activity.ReservationListActivity
 import com.example.parkingsystemkotlin.databinding.ActivityReservationParkingSpaceBinding
 import com.example.parkingsystemkotlin.mvp.contract.ParkingSpaceReservationContract
 import com.example.parkingsystemkotlin.mvp.view.base.ActivityView
@@ -109,5 +110,9 @@ class ParkingSpaceReservationView(activity: Activity, private val binding: Activ
         context?.let {
             it.toast(it.getString(R.string.toast_parking_space_reservation_amount_reserves_released, amountReservations))
         }
+    }
+
+    override fun showReservationList() {
+        activity?.startActivity(context?.let { ReservationListActivity.getIntent(it) })
     }
 }

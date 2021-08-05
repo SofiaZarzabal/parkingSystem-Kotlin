@@ -24,4 +24,13 @@
     <string name="toast_parking_space_reservation_reservation_overlapping">This date has already booked. Please select another date</string>
     <string name="toast_parking_space_reservation_save">Your reservation was made successfully</string>
     <string name="toast_parking_space_reservation_amount_reserves_released">%1$d reserves have been released</string>
+    <string name="button_parking_space_reservation_list">Saved reservations</string>
+    <string name="text_reservation_list_title">Saved reservations list</string>
+    <string name="text_reservation_list">Reservation: %1$d</string>
+    <string name="text_reservation_list_date_start">Date start: %1$s</string>
+    <string name="text_reservation_list_time_start">Time start: %1$s</string>
+    <string name="text_reservation_list_date_end">Date end: %1$s</string>
+    <string name="text_reservation_list_time_end">Time end: %1$s</string>
+    <string name="text_reservation_list_parking_space">Parking space: %1$s</string>
+    <string name="text_reservation_list_security_code">Security code: %1$s</string>
 </resources>

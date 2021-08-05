@@ -42,4 +42,29 @@
     <style name="InputParkingSpaceReservationCodeStyle" parent="InputParkingSpaceReservationStyle">
         <item name="android:hint">@string/input_parking_space_reservation_code_hint</item>
     </style>
+
+    <style name="TextReservationListStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/size_reservation_list_text_view</item>
+    </style>
+
+    <style name="RecyclerViewReservationListStyle">
+        <item name="android:layout_marginTop">@dimen/margin_top_reservation_list_recycler_view</item>
+        <item name="android:background">@color/maroon_recycler_view_reservation_list</item>
+    </style>
+
+    <style name="ItemReservationListStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/size_reservation_list_item</item>
+    </style>
+
+    <style name="ItemTitleReservationListStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/size_reservation_list_item_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ItemSecurityCodeReservationListStyle" parent="ItemReservationListStyle">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_reservation_list_security_code</item>
+    </style>
 </resources>

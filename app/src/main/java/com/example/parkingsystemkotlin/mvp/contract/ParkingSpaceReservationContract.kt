@@ -14,6 +14,7 @@ interface ParkingSpaceReservationContract {
         fun onTimeSetPressed(hourOfDay: Int, minute: Int)
         fun onButtonParkingSpaceReservationSavePressed()
         fun clearOldReservations()
+        fun onButtonParkingSpaceReservationListPressed()
     }
 
     interface ParkingSpaceReservationModel {
@@ -55,5 +56,6 @@ interface ParkingSpaceReservationContract {
         fun showReservationOverlapping()
         fun showReservationSuccess()
         fun showPastReservationsReleased(amountReservations: Int)
+        fun showReservationList()
     }
 }
