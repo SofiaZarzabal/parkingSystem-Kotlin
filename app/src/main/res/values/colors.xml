@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pomegranate_button_main_activity">#90F44336</color>
     <color name="burnt_sienna_title_main_activity">#EA5853</color>
+    <color name="maroon_recycler_view_reservation_list">#60000000</color>
 </resources>

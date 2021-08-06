@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title_reservation_list"
+        style="@style/ItemTitleReservationListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_reservation_list_date_start"
+        style="@style/ItemReservationListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_reservation_list" />
+
+    <TextView
+        android:id="@+id/text_reservation_list_time_start"
+        style="@style/ItemReservationListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_reservation_list_date_start" />
+
+    <TextView
+        android:id="@+id/text_reservation_list_date_end"
+        style="@style/ItemReservationListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_reservation_list_time_start" />
+
+    <TextView
+        android:id="@+id/text_reservation_list_time_end"
+        style="@style/ItemReservationListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_reservation_list_date_end" />
+
+    <TextView
+        android:id="@+id/text_reservation_list_parkingSpace"
+        style="@style/ItemReservationListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_reservation_list_time_end" />
+
+    <TextView
+        android:id="@+id/text_reservation_list_securityCode"
+        style="@style/ItemSecurityCodeReservationListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_reservation_list_parkingSpace" />
+</androidx.constraintlayout.widget.ConstraintLayout>

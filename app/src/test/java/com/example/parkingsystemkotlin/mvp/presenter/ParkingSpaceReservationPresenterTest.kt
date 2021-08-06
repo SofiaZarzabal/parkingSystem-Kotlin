@@ -253,8 +253,15 @@ class ParkingSpaceReservationPresenterTest {
     }
 
     @Test
-    fun`on activity creates, the old reservations are released`(){
+    fun `on activity creates, the old reservations are released`() {
         presenter.clearOldReservations()
+    }
+
+    @Test
+    fun `on button list saved reservations pressed, the view goes to reservation list activity`() {
+        presenter.onButtonParkingSpaceReservationListPressed()
+
+        verify(view).showReservationList()
     }
 
     companion object {

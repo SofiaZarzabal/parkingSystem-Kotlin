@@ -49,6 +49,7 @@ class ParkingSpaceReservationActivity : AppCompatActivity(), DatePickerDialog.On
             buttonParkingSpaceReservationPickerBegin.setOnClickListener { presenter.onButtonParkingSpaceReservationPickerPressed(this@ParkingSpaceReservationActivity) }
             buttonParkingSpaceReservationPickerEnd.setOnClickListener { presenter.onButtonParkingSpaceReservationPickerPressed(this@ParkingSpaceReservationActivity) }
             buttonParkingSpaceReservationSave.setOnClickListener { presenter.onButtonParkingSpaceReservationSavePressed() }
+            buttonParkingSpaceReservationList.setOnClickListener { presenter.onButtonParkingSpaceReservationListPressed() }
         }
     }
 

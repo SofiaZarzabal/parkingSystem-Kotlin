@@ -73,4 +73,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/input_parking_space_reservation_code" />
+
+    <Button
+        android:id="@+id/button_parking_space_reservation_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_parking_space_reservation_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_parking_space_reservation_save" />
 </androidx.constraintlayout.widget.ConstraintLayout>

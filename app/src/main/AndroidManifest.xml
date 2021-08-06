@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ParkingSpaceReservationActivity" />
+        <activity android:name=".activity.ReservationListActivity"/>
     </application>
 
 </manifest>

@@ -26,4 +26,6 @@ object ParkingSpaceReservationDB {
             }
         }
     }
+
+    fun getAllReservations(): List<Reservation> = hashReservation.flatMap { (_, values) -> values }
 }
